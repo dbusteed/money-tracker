@@ -3,7 +3,7 @@ import {View,Text,Button} from 'react-native'
 import gStyles from '../../config/gStyles'
 import {connect} from 'react-redux'
 import TitleBar from '../../components/titleBar'
-import MonthData from '../../components/monthHeader'
+import MonthData from '../../components/monthData'
 import * as counterActions from '../../actions/counterActions'
 
 class Home extends Component {
