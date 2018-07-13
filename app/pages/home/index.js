@@ -70,18 +70,16 @@ class Home extends Component {
       <View style={gStyles.container}>
         {this.renderTitleBar()}
 
-        <View style={{flex: .1, justifyContent: 'center', alignItems: 'center', marginTop: 10, }}>
+        <View style={{flex: .05, justifyContent: 'center', alignItems: 'center', marginTop: 10, }}>
           {/* <Text style={{fontSize: 28, color: '#111111'}}>History</Text> */}
         </View>
 
-        <Button title='get' onPress={() => this.props.dispatch(makeSummary())} />
-
-        <View style={{flex: .9, alignItems: 'center', justifyContent: 'center'}}>
+        <View style={{flex: .95, alignItems: 'center', justifyContent: 'center'}}>
           <View style={{width: '90%', height: '90%',}}>
             <ScrollView>
 
               {
-                (!summary.isComputing) ? this.renderMonthCards(summary.data) : null
+                (!summary.isComputing) ? this.renderMonthCards(summary.data) : <Text>No data has been entered</Text>
               }
           
             </ScrollView>

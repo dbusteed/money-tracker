@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import TitleBar from '../../components/titleBar'
 import * as dataActions from '../../actions/dataActions'
 import TabNavigator from 'react-native-tab-navigator'
+import { makeSummary } from '../../actions/summaryActions'
 
 class NewIncome extends Component {
   constructor(props) {
@@ -20,10 +21,9 @@ class NewIncome extends Component {
   handleSubmit = () => {
     
     //date
-    parts = this.state.date.split('-')
-    date = new Date(parts[0], parts[1]-1, parts[2])
+    date = this.state.date
 
-    if((date) == 'Invalid Date') {
+    if((date) == '') {
       alert('Please enter a date')
       return 0
     }
@@ -58,6 +58,7 @@ class NewIncome extends Component {
 
     this.amtInput.clear()
     this.descInput.clear()
+    this.props.makeSummary()
   }
 
   renderTitleBar() {
@@ -152,6 +153,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return ({
     newIncome: (obj) => dispatch(dataActions.newIncome(obj)),
+    makeSummary: () => dispatch(makeSummary())
   })
 }
 
