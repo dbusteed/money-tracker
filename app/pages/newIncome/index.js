@@ -41,7 +41,7 @@ class NewIncome extends Component {
       alert('Please enter a description')
       return 0
     }
-    
+
     newData = {
       'date': date,
       'amt': amt,
@@ -136,22 +136,22 @@ class NewIncome extends Component {
 }
 
 function mapStateToProps(state) {
-  let data
+  let addData
 
-  (state.data === undefined) ?
-  data = {} :
-  data = state.data;
+  (state.addData === undefined) ?
+  addData = {} :
+  addData = state.addData;
 
-  console.log(data)
+  console.log(addData)
 
   return ({
-    data
+    addData
   })
 }
 
 function mapDispatchToProps(dispatch) {
   return ({
-    newIncome: (obj) => dispatch(dataActions.newIncome(obj))
+    newIncome: (obj) => dispatch(dataActions.newIncome(obj)),
   })
 }
 

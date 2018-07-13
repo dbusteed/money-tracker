@@ -14,7 +14,7 @@ export default class MonthData extends React.PureComponent {
         month: 'June',
         year: '2018',
         color: 'green',
-        data: {in: 200, ex: 100, gas: 50, 
+        data: {totalIn: 200, totalEx: 100, gas: 50, 
             groc: 50, eatOut: 0, house: 0, 
             tithing: 0, school: 0, other: 0}
     }
@@ -27,7 +27,7 @@ export default class MonthData extends React.PureComponent {
     
     render() {
         return (
-            <View>
+            <View style={styles.mainContainer}>
                 <TouchableOpacity onPress={this.toggleDetail.bind(this)}>
                     <View style={[styles.header, {backgroundColor: this.props.color}]}>
                         <Text style={styles.headerText}>{this.props.month}</Text>
@@ -43,20 +43,20 @@ export default class MonthData extends React.PureComponent {
                             <Text style={styles.detailText}>Total Income:</Text>
                         </View>
                         <View style={[styles.detailViewB, styles.hangRight]}>
-                            <Text style={styles.detailText}>{this.props.data.in}</Text>
+                            <Text style={styles.detailText}>{this.props.data.totalIn}</Text>
                         </View>
                         <View style={styles.detailViewA}>
                             <Text style={styles.detailText}>Total Expenses:</Text>
                         </View>
                         <View style={[styles.detailViewB, styles.hangRight]}>
-                            <Text style={styles.detailText}>{this.props.data.ex}</Text>
+                            <Text style={styles.detailText}>{this.props.data.totalEx}</Text>
                         </View>
                         <View style={styles.detailViewA} />
                         <View style={styles.detailViewB}>
                             <Text style={styles.detailText}>Difference:</Text>
                         </View>
                         <View style={[styles.detailViewA, styles.hangRight]}>
-                            <Text style={styles.detailText}>{this.props.data.in - this.props.data.ex}</Text>
+                            <Text style={styles.detailText}>{this.props.data.totalIn - this.props.data.totalEx}</Text>
                         </View>
                         <View style={{minHeight: 10, backgroundColor: '#e9e9e9'}} />
                     </View>
@@ -100,12 +100,16 @@ export default class MonthData extends React.PureComponent {
 }
 
 const styles = StyleSheet.create({
+    mainContainer: {
+        paddingBottom: 5,
+    },
     header: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center', 
         maxHeight: 50,
         minHeight: 50,
+        borderRadius: 5
     },
     headerText: {
         color: 'white',

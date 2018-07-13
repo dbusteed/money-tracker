@@ -3,7 +3,7 @@ export const initialState = {
     expenses: []
 }
 
-export function data(state=initialState, action) {
+export function addData(state=initialState, action) {
     switch(action.type) {
         case 'NEW_INCOME':
             return {

@@ -1,10 +1,12 @@
 import {combineReducers} from 'redux'
 import {counter} from './counterReducer'
-import {data} from './dataReducer'
+import {addData} from './dataReducer'
+import { summary } from './summaryReducer'
 
 const rootReducer = combineReducers({
     counter,
-    data
+    addData,
+    summary
 })
 
 export default rootReducer
