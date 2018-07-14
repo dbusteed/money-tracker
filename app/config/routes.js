@@ -5,6 +5,7 @@ import { createStackNavigator,
 import Home from '../pages/home'
 import NewIncome from '../pages/newIncome'
 import NewExpense from '../pages/newExpense'
+import Details from '../pages/details'
 
 const NewDataTabs = createMaterialTopTabNavigator(
 	{
@@ -27,6 +28,7 @@ const MainNav = createStackNavigator(
 			Home: { screen: Home },
 			NewIncome: { screen: NewDataTabs },
 			NewExpense: { screen: NewExpense },
+			Details: { screen: Details },
 	},
 	{
 			headerMode: 'none',

@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import TitleBar from '../../components/titleBar'
 import MonthData from '../../components/monthData'
 import { makeSummary } from '../../actions/summaryActions'
+import { getDetails } from '../../actions/detailActions'
 
 class Home extends Component {
 
@@ -49,16 +50,18 @@ class Home extends Component {
     cards = []
     i = 1
     Object.keys(data).forEach((key) => {
-      (i%2==1) ? bgColor='#327ac7' : bgColor='#459cf9';
+      (i%2==1) ? bgColor='#459cf9' : bgColor='#327ac7';
       cards.push( 
         <MonthData key={key} month={this.getMonthName(key.substring(4,6))}
-          year={key.substring(0,4)} data={data[key]} color={bgColor}/> 
+          year={key.substring(0,4)} data={data[key]} color={bgColor}
+          deetFunc={ () => {
+            this.props.dispatch(getDetails(key))
+            this.props.navigation.navigate('Details')
+          }}
+        /> 
       )
-
       i++
-
     })
-    
     return cards
   }
 
@@ -92,7 +95,7 @@ class Home extends Component {
 }
 
 function mapStateToProps(state) {
-  let summary
+  let summary, details
 
   if(state.summary === undefined) {
     summary = {}
@@ -100,11 +103,8 @@ function mapStateToProps(state) {
     summary = state.summary
   }
 
-  console.log('MSTP summary')
-  console.log(summary)
-
   return ({
-    summary
+    summary,
   })
 }
 
@@ -113,9 +113,7 @@ export default connect(mapStateToProps)(Home)
 // # TODO
 
 // ## Bugs
-//     * date split issue
 
 // ## Improvements
 //     * tab btwn fields
-//     * desc optional
 //     * keyboard pushing view

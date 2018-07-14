@@ -4,7 +4,7 @@ import EnIcon from 'react-native-vector-icons/Entypo'
 import MatIcon from 'react-native-vector-icons/MaterialIcons'
 import styles from './styles'
 
-// new-message, arrow-back 
+// new-message, arrow-back, close
 
 export default class Titlebar extends React.PureComponent {
     
@@ -19,9 +19,9 @@ export default class Titlebar extends React.PureComponent {
                         hitSlop={{top: 5, bottom: 5, left: 5, right: 5}}
                         onPress={func}
                         accessible={true}>
-                        { (name == 'arrow-back') ? 
-                        <MatIcon name={name} color={'white'} size={size} /> :
-                        <EnIcon name={name} color={'white'} size={size} /> }
+                        { (name == 'new-message') ? 
+                        <EnIcon name={name} color={'white'} size={size} /> :
+                        <MatIcon name={name} color={'white'} size={size} /> }
                     </TouchableOpacity>
                 )
                 return this

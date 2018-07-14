@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View,Text,TextInput,Button,Picker} from 'react-native'
+import {View,Text,TextInput,Button,Picker,KeyboardAvoidingView} from 'react-native'
 import gStyles from '../../config/gStyles'
 import DatePicker from 'react-native-datepicker'
 import { connect } from 'react-redux'
@@ -95,7 +95,7 @@ class NewExpense extends Component {
           </TabNavigator>
         </View>
 
-        <View style={gStyles.formContainer}>
+        <KeyboardAvoidingView behavior='padding' keyboardVerticalOffset={500} style={gStyles.formContainer}>
           
           <Text style={gStyles.formLabel}>Date: </Text>
           <DatePicker
@@ -147,7 +147,7 @@ class NewExpense extends Component {
 
           <Button title={'Submit'} onPress={this.handleSubmit.bind(this)} />
 
-        </View>
+        </KeyboardAvoidingView>
 
       </View>
     )
