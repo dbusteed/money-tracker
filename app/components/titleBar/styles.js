@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native'
 export default styles = StyleSheet.create({
     titleBar: {
         width: '100%',
-        minHeight: 60,
-        maxHeight: 60,
+        minHeight: 70,
+        maxHeight: 70,
         backgroundColor: '#327ac7',
         flex: 1,
         flexDirection: 'row',
@@ -12,12 +12,13 @@ export default styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         marginBottom: 5,
-        padding: 10
+        padding: 10,
     },
     titleBarContainer: {
         flex: 1,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingTop: 10
     },
     titleText: {
         fontSize: 26,

@@ -15,8 +15,8 @@ export default class MonthData extends React.PureComponent {
         year: '2018',
         color: '#327ac7',
         data: {
-            totalIn: 200, totalEx: 100, gas: 50,
-            groc: 50, eatOut: 0, house: 0,
+            totalIn: 0, totalEx: 0, gas: 0,
+            groc: 0, eatOut: 0, house: 0,
             tithing: 0, school: 0, other: 0
         },
         deetFunc: ()=>{}
@@ -70,7 +70,7 @@ export default class MonthData extends React.PureComponent {
                                     <Text style={styles.detailText}>{this.props.data.gas}</Text>
                                 </View>
                                 <View style={[styles.detailViewA, { flexDirection: 'row', justifyContent: 'space-between', }]}>
-                                    <Text style={styles.detailText}>Grocies:</Text>
+                                    <Text style={styles.detailText}>Groceries:</Text>
                                     <Text style={styles.detailText}>{this.props.data.groc}</Text>
                                 </View>
                                 <View style={[styles.detailViewB, { flexDirection: 'row', justifyContent: 'space-between' }]}>
@@ -144,8 +144,6 @@ const styles = StyleSheet.create({
         maxHeight: 27,
         justifyContent: 'center',
         backgroundColor: '#e9e9e9',
-        borderTopColor: 'black',
-        borderTopWidth: .5
     },
     detailViewB: {
         padding: 2,

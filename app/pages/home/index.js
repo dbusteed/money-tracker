@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View,Text,Button,ScrollView} from 'react-native'
+import {View,Text,StatusBar,ScrollView} from 'react-native'
 import gStyles from '../../config/gStyles'
 import {connect} from 'react-redux'
 import TitleBar from '../../components/titleBar'

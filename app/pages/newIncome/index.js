@@ -97,7 +97,7 @@ class NewIncome extends Component {
           
           <Text style={gStyles.formLabel}>Date: </Text>
           <DatePicker
-            style={{width: '80%', marginBottom: 20}}
+            style={{width: '80%', marginBottom: 20, borderColor: 'black', borderWidth: .75}}
             customStyles={{
               dateText: {
                 fontSize: 24
@@ -115,15 +115,17 @@ class NewIncome extends Component {
           <Text style={gStyles.formLabel}>Amount: </Text>
           <TextInput
             ref={input => {this.amtInput = input}}
+            value={this.state.amt}
             keyboardType={'numeric'}
-            style={{height: 50, width: '80%', fontSize: 24, textAlign: 'center', marginBottom: 20}}
+            style={gStyles.input}
             onChangeText={(t) => this.setState({...this.state, amt: t})}
           />
 
           <Text style={gStyles.formLabel}>Description: </Text>          
           <TextInput
             ref={input => {this.descInput = input}}
-            style={{height: 50, width: '80%', fontSize: 24, textAlign: 'center', marginBottom: 20}}
+            value={this.state.desc}
+            style={gStyles.input}
             onChangeText={(t) => this.setState({...this.state, desc: t})}
           />
 

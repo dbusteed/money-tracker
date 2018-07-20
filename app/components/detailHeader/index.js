@@ -26,7 +26,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#d3d3d3',
         width: '95%',
         borderColor: 'black', 
-        borderWidth: .5
+        borderWidth: .5,
+        minHeight: 50,
+        maxHeight: 50
     },
     lilContainer: {
         justifyContent: 'center',

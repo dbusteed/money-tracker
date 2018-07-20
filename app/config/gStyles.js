@@ -32,5 +32,14 @@ export default gStyles = StyleSheet.create({
     },
     formLabel: {
         fontSize: 24,
+    },
+    input: {
+      height: 50,
+      width: '80%',
+      fontSize: 24, 
+      textAlign: 'center',
+      marginBottom: 20,
+      borderColor: 'black',
+      borderWidth: 1
     }
 })

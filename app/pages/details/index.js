@@ -55,11 +55,11 @@ class Details extends Component {
       <View style={gStyles.container}>
         {this.renderTitleBar()}
 
-        <View style={{flex: .05, justifyContent: 'center', alignItems: 'center', marginTop: 10, }}>
+        <View style={{flex: .08, justifyContent: 'center', alignItems: 'center', marginTop: 10, }}>
           <Text style={{fontSize: 28, color: '#111111'}}>{month} {year}</Text>
         </View>
 
-        <View style={{flex: .05}} />
+        <View style={{flex: .03}} />
 
         <View style={{flex: .05, justifyContent: 'center', alignItems: 'center'}}>
             <DetailHeader />
@@ -76,7 +76,7 @@ class Details extends Component {
                   renderItem={ ({item, index}) =>
                     <DetailRow amt={item.amt} date={item.date.substring(5,10)} 
                       kind={item.kind} bgColor={(index%2==0) ? '#e9e9e9' : '#d3d3d3'}
-                      desc={ (item.type !== undefined) ? (item.type + ' - ' + item.desc) : (item.desc) }
+                      desc={ (item.type !== undefined) ? (item.type + ' - ' + item.desc) : ('income - ' + item.desc) }
                     />
                   }
                 />
